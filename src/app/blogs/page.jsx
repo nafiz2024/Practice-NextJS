@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const BlogsPage = () => {
   const blogs = [
@@ -85,9 +86,9 @@ const BlogsPage = () => {
                 ))}
               </div>
 
-              <button className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-sky-600">
+              <Link href={`/blogs/${blog.id}`} className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-sky-600">
                 Read More
-              </button>
+              </Link>
             </article>
           ))}
         </div>
