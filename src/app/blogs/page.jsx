@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata = {
   title: "Blogs",
@@ -47,7 +53,8 @@ const BlogsPage = () => {
 
   return (
     <section className="min-h-screen bg-slate-100 px-4 py-10 md:px-8">
-      <div className="mx-auto max-w-6xl">
+      <div className={roboto.className}>
+        <div className="mx-auto max-w-6xl">
         <div className="mb-8">
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-sky-600">
             Latest Stories
@@ -97,6 +104,7 @@ const BlogsPage = () => {
             </article>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
