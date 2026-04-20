@@ -1,3 +1,8 @@
+export const metadata = {
+    title: "More About",
+    description: "Additional information in the nested About section.",
+};
+
 const MoreAbout = () => {
     return (
         <div>

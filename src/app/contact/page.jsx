@@ -1,3 +1,8 @@
+export const metadata = {
+    title: "Contact",
+    description: "Contact page for the Practice Next.js app.",
+};
+
 const ContactPage = () => {
     return (
         <div>

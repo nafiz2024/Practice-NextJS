@@ -1,4 +1,9 @@
 
+export const metadata = {
+    title: "Error",
+    description: "Error page for fallback navigation in the app.",
+};
+
 const ErrorPage = () => {
     return (
         <div>

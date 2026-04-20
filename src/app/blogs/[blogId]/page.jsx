@@ -37,6 +37,23 @@ const blogs = [
     },
 ];
 
+export async function generateMetadata({ params }) {
+  const { blogId } = await params;
+  const blog = blogs.find((item) => item.id === parseInt(blogId, 10));
+
+  if (!blog) {
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: blog.title,
+    description: `Read details for "${blog.title}" by ${blog.author}.`,
+  };
+}
+
 const BlogDetailsPage = async ({ params }) => {
   const { blogId } = await params;
   const blog = blogs.find((blog) => blog.id === parseInt(blogId, 10));

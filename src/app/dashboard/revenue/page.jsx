@@ -1,4 +1,9 @@
 
+export const metadata = {
+    title: "Dashboard Revenue",
+    description: "Revenue insights page inside the dashboard.",
+};
+
 const page = () => {
     return (
         <div>
