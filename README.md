@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Practice Next.js
+
+A small practice project built with Next.js App Router to explore nested routes, dynamic routes, metadata, shared layouts, and simple API-driven pages.
+
+This repo is mainly a hands-on playground for learning how route segments work in modern Next.js while keeping the UI clean with Tailwind CSS and daisyUI.
+
+## Highlights
+
+- App Router based project using `src/app`
+- Shared top navigation through the root layout
+- Nested route example with `/about/about2`
+- Dashboard section with its own layout and sidebar
+- Dynamic blog details route with route-based metadata
+- Dynamic user details page powered by the JSONPlaceholder API
+- Custom `not-found` page for missing routes
+- Tailwind CSS v4 with daisyUI components
+- React Compiler enabled in `next.config.mjs`
+
+## Tech Stack
+
+- Next.js `16.2.4`
+- React `19.2.4`
+- Tailwind CSS `4`
+- daisyUI `5`
+- ESLint `9`
+
+## Pages and Routes
+
+| Route | Description |
+| --- | --- |
+| `/` | Home page |
+| `/about` | Basic about page |
+| `/about/about2` | Nested about page |
+| `/contact` | Contact page |
+| `/blogs` | Blog listing page with local mock data |
+| `/blogs/[blogId]` | Dynamic blog details page |
+| `/users` | User listing page from external API |
+| `/users/[userId]` | Dynamic user details page |
+| `/dashboard` | Dashboard landing page |
+| `/dashboard/profile` | Dashboard profile page |
+| `/dashboard/revenue` | Dashboard revenue page |
+
+## Project Structure
+
+```text
+src/
+  app/
+    about/
+    blogs/
+    contact/
+    dashboard/
+    users/
+    error/
+    not-found.js
+    globals.css
+    layout.js
+    page.js
+  component/
+    navbar/
+      Navbar.jsx
+public/
+```
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-## Learn More
+## What This Project Demonstrates
 
-To learn more about Next.js, take a look at the following resources:
+### Routing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project shows how to work with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- static routes
+- nested routes
+- dynamic routes
+- route-specific metadata
+- shared layouts
 
-## Deploy on Vercel
+### Data Fetching
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The `/users` and `/users/[userId]` pages fetch data from:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+https://jsonplaceholder.typicode.com/users
+```
+
+That makes this repo a useful starter for practicing server components and async page rendering.
+
+## UI Notes
+
+- Global styling lives in `src/app/globals.css`
+- Navigation is handled by `src/component/navbar/Navbar.jsx`
+- daisyUI is used for navbar, drawer, and button styling
+- Blog and user pages use card-based layouts for practice with responsive design
+
+## Learning Focus
+
+This project is a good fit if you want to practice:
+
+- Next.js file-based routing
+- App Router layouts
+- metadata APIs
+- dynamic params
+- simple API fetching
+- Tailwind utility styling
+
+## Notes
+
+- Blog data is currently hardcoded for demo purposes
+- User data depends on the JSONPlaceholder public API
+- There are no automated tests configured yet
+
+## License
+
+This project is for learning and practice.
